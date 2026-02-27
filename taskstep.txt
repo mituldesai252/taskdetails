@@ -1,0 +1,46 @@
+lms dev ki liye pipeline build karni hai aisi pipeline jis main agar list of project ho aur us main update kaoption ho to update ho jaye simpliest way main ese buid karna hai ki agr koi devloper aye to usko bol sake tu tere project main jake update buton press kakrdse. pahe try karne ke liye aws main jenkins kar aur abhi lms dev ke liye kar ke la  
+
+$ git clone https://chetantank@bitbucket.org/tdtechproducts/lms.git
+
+3d557175145841d7a93c124d87a0903d
+
+
+ATBBqtPnWKefBE4SbnPdefvG3Ht60B7B051E
+
+139.99.133.41
+
+mitul ALL=(ALL) NOPASSWD: /usr/bin/apt, /usr/bin/systemctl, /usr/bin/usermod, /usr/bin/mkdir, /usr/bin/chown, /usr/bin/tee
+
+
+pipeline {
+    agent any
+    stages {
+        stage('Fetch All Branches') {
+            steps {
+                sh '''
+                cd /var/www/lms-projects/lmsdev
+                git fetch --all --prune
+                '''
+            }
+        }
+        stage('Pull All Branches') {
+            steps {
+                sh '''
+                cd /var/www/lms-projects/lmsdev
+                for branch in $(git branch -r | grep -v "\\->" | sed "s/origin\///"); do
+                    echo "Pulling branch: $branch"
+                    git checkout $branch
+                    git pull origin $branch
+                done
+                '''
+            }
+        }
+    }
+}
+
+
+
+
+
+
+  

@@ -1,0 +1,16 @@
+# 1. Folder delete karein (jo partial copy hua)
+sudo rm -rf /var/www/lms-projects/lmsdev
+
+# 2. Naya folder create karein
+sudo mkdir -p /var/www/lms-projects/lmsdev
+
+# 3. Ownership fix karein (ec2-user ko full access dein)
+sudo chown -R ec2-user:ec2-user /var/www/lms-projects/
+
+# 4. Permissions set karein
+sudo chmod -R 755 /var/www/lms-projects/
+
+
+
+scp -i /home/mitul/server1.pem -r /var/www/html/lmsdev/* ec2-user@54.167.7.201:/var/www/lms-projects/lmsdev/
+139.99.133.41
