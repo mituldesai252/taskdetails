@@ -7,7 +7,7 @@ $ git clone https://chetantank@bitbucket.org/tdtechproducts/lms.git
 
 ATBBqtPnWKefBE4SbnPdefvG3Ht60B7B051E
 
-139.99.133.41
+
 
 mitul ALL=(ALL) NOPASSWD: /usr/bin/apt, /usr/bin/systemctl, /usr/bin/usermod, /usr/bin/mkdir, /usr/bin/chown, /usr/bin/tee
 
@@ -38,10 +38,11 @@ pipeline {
     }
 }
 
-XmuCRkMGH4AY
+
 
 
 
 
 
   
+
